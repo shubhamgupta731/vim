@@ -1,0 +1,119 @@
+# =============================================================
+# ========== USER MACROS ======================================
+# =============================================================
+#
+$AUTHOR$    = Shubham Gupta 
+$AUTHORREF$ = sg
+$EMAIL$     = gupta@ascomp.ch
+$COMPANY$   = Ascomp GmbH
+$COPYRIGHT$ = Copyright (c) $YEAR$, $AUTHOR$
+$sortmenus$ = yes
+$New_Instances$      = Singleton
+
+$includefile$   = doxygen.cpp.templates
+
+#
+# =============================================================
+# ========== USER TEMPLATES  /  C-STYLE =======================
+# =============================================================
+== block,long ==
+/**
+ * <CURSOR>
+ */
+#--------------------------------------------------------------
+== block,short ==
+/** <CURSOR> */
+#--------------------------------------------------------------
+== brief,detailed ==
+/**
+ * @brief <CURSOR>
+ * 
+ * Detailed description starts here.
+ */
+#--------------------------------------------------------------
+== class ==
+/**
+ * @class      : $?CLASSNAME$
+ * @brief <CURSOR>
+ * \n@TmbManager : $?New_Instances$ object
+ */
+#--------------------------------------------------------------
+== function ==
+/**
+ * @brief   <CURSOR>
+ * @param   
+ * @return  
+ * @details  
+ */
+#--------------------------------------------------------------
+== FILE-header == start ==
+/**
+ *       @file  $FILE$
+ *      @brief  <CURSOR>
+ *
+ * Detailed description starts here.
+ *
+ *     @author  $AUTHOR$ ($AUTHORREF$), $EMAIL$
+ *
+ *   @internal
+ *     Created  $DATE$
+ *    Revision  $Id: doxygen.templates,v 1.3 2010/07/06 09:20:12 mehner Exp $
+ *    Compiler  gcc/g++
+ *     Company  $COMPANY$
+ *   Copyright  $COPYRIGHT$
+ *
+ * =====================================================================================
+ */
+
+#--------------------------------------------------------------
+== brief-after-member == append ==
+ /**< @brief <CURSOR> */
+#--------------------------------------------------------------
+== formula-in-text == insert == 
+ @f$ <CURSOR><SPLIT> @f$
+#--------------------------------------------------------------
+== formula-separate == below ==
+ *    @f[ <CURSOR> @f]
+#--------------------------------------------------------------
+== formula-equarray == below ==
+ * @f{equarray*}{<CURSOR>
+ * @f}
+#--------------------------------------------------------------
+== formula-environment == below ==
+ * @f{$?ENVIRONMENT$}{<CURSOR>
+ * @f}
+#--------------------------------------------------------------
+== note == below ==
+ * @note <CURSOR>
+#--------------------------------------------------------------
+== if-endif == below ==
+ * @if $?condition:u$<CURSOR><SPLIT>
+ * @endif
+#--------------------------------------------------------------
+== latexonly == below ==
+ * @latexonly<CURSOR><SPLIT>
+ * @endlatexonly
+#--------------------------------------------------------------
+== htmlonly == below ==
+ * @htmlonly<CURSOR><SPLIT>
+ * @endhtmlonly
+#--------------------------------------------------------------
+== tmb-manager ==
+/**
+ * @brief TmbManager will be used to obtain an object of this type
+ * TmbManager is a friend of this class because all programs are going to
+ * create an object of this type using TmbManager::Global.get<class>()
+ * if you an object doesn't need to be constructed using factory or using
+ * TmbManager::Global.get<Abstract_Class>("class_name")
+ */
+#--------------------------------------------------------------
+== construct-class ==
+/**
+ * @brief <CURSOR>
+ * Construct_Class means TmbManager will always return a new object
+ * ConstructSingleton_Class means TmbManager will always return a new object
+ */
+#--------------------------------------------------------------
+== Functor ==
+/** @brief Typedef to define functors which have the form ($?ReturnType$) (*)($?ArguemtsOfFunction$) */
+#--------------------------------------------------------------

@@ -1,0 +1,2 @@
+nnoremap <silent> <buffer> <cr> :CSearchContext<cr>
+let g:EclimDefaultFileOpenAction = 'vsplit'
