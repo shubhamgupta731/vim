@@ -1,0 +1,7 @@
+VimL:" $Id: author.template 565 2012-04-11 17:26:13Z luc.hermitte@gmail.com $
+VimL:" C++ Doxygen snippet for authors, Luc Hermitte
+VimL:" hint: @author
+VimL: let s:marker_open  = '<+'
+VimL: let s:marker_close = '+>'
+VimL: let s:reindent = 1
+<+lh#dox#author()+>

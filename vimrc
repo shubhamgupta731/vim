@@ -19,6 +19,8 @@ set smartindent
 set tw=500
 "set rtp+=~/.vim/pythonf/
 set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/vim-addon-manager/
+call vam#ActivateAddons(["vim-haxe","The_NERD_tree"])
 call vundle#rc()
 
 "This function seems to send the cursor to the beginning
@@ -74,6 +76,7 @@ Bundle 'sparkup'
 Bundle 'syntastic'
 Bundle 'vim-ipython'
 Bundle 'vim-rails'
+Bundle 'MakeDoxygenComment-2013'
 
 " ...
 "let g:clang_format_style = '/home/gupta/Transatsuite/transatMB/transat-format'
@@ -87,7 +90,7 @@ noremap <silent><C-X><C-D> :DoxyClass<CR>
 noremap <silent><C-X><C-F> :DoxyFunction<CR>
 noremap <silent><C-X><C-M> :DoxyBriefAfterMember<CR>
 noremap <silent><C-X><C-H> :DoxyFILEHeader<CR>
-noremap <silent><C-X><C-B><C-B> :DoxyBriefDetailed<CR>
+noremap <silent><C-X><C-B><C-D> :DoxyBriefDetailed<CR>
 noremap <silent><C-X><C-B> :DoxyBlockLong<CR>
 "let g:syntastic_cxx_compiler = 'clang++'
 "let g:syntastic_cpp_compiler = 'clang++'
