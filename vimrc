@@ -1,5 +1,3 @@
-
-set background=dark
 set fileformats=unix
 set shiftwidth=3
 set softtabstop=3
@@ -19,8 +17,6 @@ set smartindent
 set tw=500
 "set rtp+=~/.vim/pythonf/
 set rtp+=~/.vim/bundle/vundle/
-set rtp+=~/.vim/bundle/vim-addon-manager/
-call vam#ActivateAddons(["vim-haxe","The_NERD_tree"])
 call vundle#rc()
 
 "This function seems to send the cursor to the beginning
@@ -35,6 +31,7 @@ endfunction
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-pathogen'
 
 " My Bundles here:
 "
@@ -42,27 +39,20 @@ Bundle 'gmarik/vundle'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 " git repos on your local machine (ie. when working on your own plugin)
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Valloric/ListToggle'
 Bundle 'scrooloose/syntastic'
 Bundle 'ivanov/vim-ipython'
-Bundle 'Lokaltog/powerline'
-Bundle 'Lokaltog/powerline'
+"Bundle 'Lokaltog/powerline' , {'rtp': 'powerline/bindings/vim/'}
 Bundle 'Command-T'
 Bundle 'Doxygen-via-Doxygen'
 Bundle 'DoxygenToolkit.vim'
-Bundle 'FuzzyFinder'
-Bundle 'L9'
 Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
-Bundle 'ListToggle'
 Bundle 'SyntaxComplete'
 Bundle 'Tabular'
 Bundle 'Tagbar'
 Bundle 'VisIncr'
-Bundle 'YouCompleteMe'
 Bundle 'ack.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'doxygen-support.vim'
@@ -70,17 +60,16 @@ Bundle 'fugitive.vim'
 Bundle 'gundo'
 Bundle 'neocomplcache'
 Bundle 'pathogen.vim'
-Bundle 'powerline-fonts'
-Bundle 'powerline'
-Bundle 'sparkup'
-Bundle 'syntastic'
-Bundle 'vim-ipython'
-Bundle 'vim-rails'
-Bundle 'MakeDoxygenComment-2013'
+Bundle 'bling/vim-airline'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-sleuth'
+Bundle "pangloss/vim-javascript"
+Bundle 'ervandew/screen'
+
 
 " ...
 "let g:clang_format_style = '/home/gupta/Transatsuite/transatMB/transat-format'
-let g:ycm_global_ycm_extra_conf = '/home/gupta/Transatsuite/transatMB/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '/home/gupta/Transatsuite/transatMB/.ycm_extra_conf.py'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 nnoremap U :GundoToggle<CR>
 execute pathogen#infect()
@@ -90,7 +79,7 @@ noremap <silent><C-X><C-D> :DoxyClass<CR>
 noremap <silent><C-X><C-F> :DoxyFunction<CR>
 noremap <silent><C-X><C-M> :DoxyBriefAfterMember<CR>
 noremap <silent><C-X><C-H> :DoxyFILEHeader<CR>
-noremap <silent><C-X><C-B><C-D> :DoxyBriefDetailed<CR>
+noremap <silent><C-X><C-B><C-B> :DoxyBriefDetailed<CR>
 noremap <silent><C-X><C-B> :DoxyBlockLong<CR>
 "let g:syntastic_cxx_compiler = 'clang++'
 "let g:syntastic_cpp_compiler = 'clang++'
@@ -236,6 +225,36 @@ set winaltkeys=no
 "let c = nr2char(1+char2nr(c))
 "endw
 set backspace=indent,eol,start
+nnoremap <C-I> <C-]>
 nnoremap <C-X><C-A> :Tabularize /
 vnoremap <C-X><C-A> :Tabularize /
 let g:neocomplcache_enable_at_startup = 1
+set background=dark
+let g:solarized_termcolors = 16
+let g:solarized_termtrans = 1
+colorscheme onedark
+"set guifont=Inconsolata\ for\ Powerline:h15
+"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
+set mouse=a
+set laststatus=2
+set viewoptions=cursor,folds,slash,unix 
+let g:skipview_files = ['*\.vim'] 
+let g:indentLine_color_term = 239
+let g:indentLine_char = '│'
+
+"Select pasted text using gp
+nnoremap gp `[v`]
+set re=1
+let g:rehash256 = 1
+let g:molokai_original = 1
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:rainbow_activate = 1
+let loaded_rainbow = 1
